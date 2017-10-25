@@ -1,0 +1,178 @@
+@media only screen and (max-aspect-ratio: 3/4) {
+  header {
+    height: 4%;
+    width: 100%;
+  }
+  
+  #content {
+    height: 95%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 16/15) {
+  header {
+    width: 100%;
+  }
+
+  #content {
+    height: 100%;
+    width: 65vh;
+  }
+  
+  #description {
+    padding-top: 1vh;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 16/15) {
+  header {
+    width: 105vh;
+    margin: auto;
+    font-size: 0.8em;
+  }
+  
+  #content {
+    height: 100%;
+    width: 65vh;
+  }
+  
+  #description {
+    padding-top: 1vh;
+  }
+}
+
+body {
+  background: #ffffa0;
+  font-family: Arial;
+  font-size: 2.5vh;
+  font-weight: bold;
+  text-align: center;
+}
+
+img {
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+  font-weight: normal;
+}
+
+#h-left {
+  float: left;
+}
+
+#h-right {
+  float: right;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.flex-item {
+  margin: auto;
+}
+
+#image-holder {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+}
+
+.poke-pic {
+  margin: auto;
+}
+
+.desc-text {
+  text-align: justify;
+  font-size: 0.9em;
+}
+
+#description {
+  height: 8%;
+  font-size: 1.1em;
+}
+
+#canvas-holder {
+  height: 75%;
+  font-size: 0.8em;
+}
+
+#canvas {
+  border: 2px solid;
+  border-radius: 5px;
+  background: white;
+}
+
+#clear-button {
+  position: absolute;
+  margin: 1.3vh;
+  padding: 7px 9px;
+  width: auto;
+  background: #eee;
+  font-size: 1.1em;
+}
+
+#button-holder {
+  width: 100%;
+  height: 8%;
+}
+
+#pokebutton-holder {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  width: 30%;
+  margin: auto;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 12px 0px;
+  font-size: 0.9em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.button-hover {
+  box-shadow: inset 0px 0px 0px 1px;
+}
+
+#charmander {
+  background: #ee7820;
+}
+
+#squirtle {
+  background: #83c6d6;
+}
+
+#bulbasaur {
+  background: #78a65c;
+}
+
+#message {
+  display: none;
+  padding: 14px 0px;
+}
+
+#restart-button {
+  display: none;
+  background: #eee;
+}

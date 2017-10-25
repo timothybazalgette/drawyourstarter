@@ -1,0 +1,48 @@
+<?php
+function savePokemon($newHeight) {
+    // Various sanity/security checks.
+    $pokemon = $_POST['pokemon'];
+    $imgData = $_POST['imgData'];
+    if ($pokemon == NULL || $imgData == NULL) {
+        throw new Exception('Required POST parameters not set.');
+    }
+    if (!in_array($pokemon, array('bulbasaur', 'charmander', 'squirtle'))) {
+        throw new Exception("Invalid Pokemon name $pokemon in input data.");
+    }
+    $imgData = str_replace(' ', '+', $imgData);
+    $imgData = base64_decode($imgData, $strict=true);
+    if (!$imgData) {
+        throw new Exception('Error decoding Base64 image data.');
+    }
+    $finfo = new finfo(FILEINFO_MIME);
+    $mime = $finfo->buffer($imgData);
+    if ($mime != 'image/png; charset=binary') {
+        throw new Exception("File has MIME type $mime rather than image/png.");
+    }
+    $img = imagecreatefromstring($imgData);
+    if (!$img) {
+        throw new Exception('Error converting image data.');
+    }
+    $width = imagesx($img);
+    $height = imagesy($img);
+    if (round($width/$height, 1) != 0.8) {
+        throw new Exception("Image has incorrect proportions.");
+    }
+ 
+    // Resample image to one of $height.
+    $newWidth = intval($newHeight * 0.8);
+    $newImg = imagecreatetruecolor($newWidth, $newHeight);
+    imagecopyresampled($newImg, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+
+    // Save under (pretty) unique ID.
+    $name = uniqid($pokemon.'-');
+    imagepng($newImg, "../uploads/$name.png", 9);
+}
+
+try {
+    savePokemon(200);
+} catch (Exception $e) {
+    error_log($e);
+    http_response_code(500);
+}
+?>

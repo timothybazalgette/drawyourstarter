@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+      minimum-scale=1.0, user-scalable=0">
+    <title>Draw Your Starter</title>
+    <meta name="description">
+    
+    <link rel="stylesheet" href="canvas.css">
+  </head>
+  <body>
+    <header>
+      <div id="h-left" class="header-text"><a href="/">back</a></div>
+      <div id="h-right" class="header-text"><a href="https://github.com/timothybazalgette/drawyourstarter">source</a></div>
+    </header>
+    <div id="content">
+      <div class="desc-text">
+        <p>Draw Your Starter is a personal machine learning project, which aims to use a
+        convolutional neural network to classify user-submitted drawings of starter
+        Pok&eacute;mon.</p>
+
+        <p>I am currently at the data gathering stage, so am welcoming your
+        Pok&eacute;mon, the worse the better! See my shameful efforts below.</p>
+      </div>
+      <div id="image-holder">
+        <picture class="poke-pic">
+          <source srcset="assets/bulbasaur-small.png" media="(max-height: 500px)">
+          <source srcset="assets/bulbasaur.png" media="(max-height: 800px)">
+          <source srcset="assets/bulbasaur-big.png">
+          <img src="assets/bulbasaur.png" alt="bulbasaur">
+        </picture>
+        <picture class="poke-pic">
+          <source srcset="assets/charmander-small.png" media="(max-height: 500px)">
+          <source srcset="assets/charmander.png" media="(max-height: 800px)">
+          <source srcset="assets/charmander-big.png">
+          <img src="assets/charmander.png" alt="charmander">
+        </picture>
+        <picture class="poke-pic">
+          <source srcset="assets/squirtle-small.png" media="(max-height: 500px)">
+          <source srcset="assets/squirtle.png" media="(max-height: 800px)">
+          <source srcset="assets/squirtle-big.png">
+          <img src="assets/squirtle.png" alt="bulbasaur">
+        </picture>
+      </div>
+      <div class="desc-text">
+        <p>In the future, I plan to build, train, and serve a model using Tensorflow,
+        and potentially write a tutorial based on this, which may feature some lucky
+        submissions.</p>
+
+        <p>Pok&eacute;mon &copy; 2017 Pok&eacute;mon; &copy; 1995-2017
+        Nintendo/Creatures Inc./GAME FREAK inc. Pok&eacute;mon and the Pok&eacute;mon
+        character names are trademarks of Nintendo. This site is a personal project which
+        involves gathering of fan art of these characters for non-commericial purposes,
+        and does not intend to infringe copyright or trademark.</p>
+      </div>
+    </div>
+  </body>
+</html>
